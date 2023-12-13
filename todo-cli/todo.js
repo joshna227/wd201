@@ -55,13 +55,13 @@ const todoList = () => {
         if (list[i].completed === false) {
           out.push(`[ ] ${list[i].title}`)
         } else {
-          out.push(`[X] ${list[i].title}`)
+          out.push(`[x] ${list[i].title}`)
         }
       } else {
         if (list[i].completed === false) {
           out.push(`[ ] ${list[i].title} ${list[i].dueDate}`)
         } else {
-          out.push(`[X] ${list[i].title} ${list[i].dueDate}`)
+          out.push(`[x] ${list[i].title} ${list[i].dueDate}`)
         }
       }
     }
