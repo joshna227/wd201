@@ -15,8 +15,7 @@ const todoList = () => {
     od = []
     // eslint-disable-next-line no-undef
     for (let i = 0; i < all.length; i++) {
-      let te = new Date(all[i].dueDate)
-      if (te.getDate() === yesterday) {
+      if (all[i].dueDate < today) {
         od.push(all[i])
       }
     }
@@ -28,8 +27,7 @@ const todoList = () => {
     // of todo items that are due today accordingly.
     dt = []
     for (let i = 0; i < all.length; i++) {
-      let te = new Date(all[i].dueDate)
-      if (te.getDate() === today) {
+      if (all[i].dueDate === today) {
         dt.push(all[i])
       }
     }
@@ -41,11 +39,11 @@ const todoList = () => {
     // of todo items that are due later accordingly.
     dl = []
     for (let i = 0; i < all.length; i++) {
-      let te = new Date(all[i].dueDate)
-      if (te.getDate() === tomorrow) {
+      if (all[i].dueDate > today) {
         dl.push(all[i])
       }
     }
+    return dl
   }
 
   const toDisplayableList = (list) => {
@@ -53,8 +51,7 @@ const todoList = () => {
     // as per the format given above.
     out = []
     for (i = 0; i < list.length; i++) {
-      let te = new Date(all[i].dueDate)
-      if (te === today) {
+      if (list[i].dueDate === today) {
         if (list[i].completed === false) {
           out.push(`[ ] ${list[i].title}`)
         } else {
@@ -62,9 +59,9 @@ const todoList = () => {
         }
       } else {
         if (list[i].completed === false) {
-          out.push(`[ ] ${list[i].title} ${te}`)
+          out.push(`[ ] ${list[i].title} ${list[i].dueDate}`)
         } else {
-          out.push(`[X] ${list[i].title} ${te}`)
+          out.push(`[X] ${list[i].title} ${list[i].dueDate}`)
         }
       }
     }
