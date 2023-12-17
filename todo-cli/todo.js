@@ -1,3 +1,6 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
 /* eslint-disable prefer-const */
 /* eslint-disable no-undef */
 const todoList = () => {
