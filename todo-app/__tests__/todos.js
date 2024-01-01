@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 /* eslint-disable no-undef */
 const request = require("supertest");
 
