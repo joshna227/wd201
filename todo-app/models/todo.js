@@ -1,3 +1,7 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable space-before-function-paren */
+/* eslint-disable semi */
+/* eslint-disable quotes */
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -13,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
 
     static addTodo({ title, dueDate }) {
       return this.create({ title, dueDate, completed: false });
+    }
+
+    static getTodos() {
+      return this.findAll();
     }
 
     markAsCompleted() {
